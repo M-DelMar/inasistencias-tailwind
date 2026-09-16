@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fondo: "#F1F0FF",
+                        morado: "#52059E",
+                        moradoClaro: "#C4A0E9",
+                        azulOscuro: "#242052",
+                        texto: "#536075",
+                    },
+                    boxShadow: {
+                        tarjeta: "0 12px 30px rgba(36, 32, 82, 0.08)",
+                        boton: "0 5px 12px rgba(241, 182, 255, 1)"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-fondo text-azulOscuro">
+    <!-- NAVBAR -->
+    <header class="w-full">
+        <nav class="max-w-xl mx-auto px-6 lg:px-10 py-12">
+            <div class="items-center justify-between ">
+    <div>
+        <div class="relative">
+            <div class="relative rounded-[28px] overflow-hidden shadow-2xl min-h-[400px] sm:min-h-[500px] 
+            flex items-center justify-center bg-gradient-to-br from-purple-200 via-white to-purple-300">
+        <div class="text-center mb-8">
+            <!-- LOGO -->
+            <section class="w-full max-w-sm px-8 py-10 flex flex-col items-center">
+            <div class="mb-3">
+                <img 
+                    src="Inasistencias.jpeg"
+                    alt="Logo Control Inasistencias"
+                    class="w-40 h-30 object-contain mx-auto rounded-3xl mb-7 "
+                    <h1 class="text-2xl sm:text-3xl font-bold text-center">
+                        CONTROL INASISTENCIAS
+                    </h1>
+
+        <div class="flex flex-col sm:flex-row gap-6 mt-8 text-texto">
+            <div class="flex items-center gap-2">
+            </div>
+            <div class="flex items-center gap-2">
+            </div>
+        </div>
+        
+        <!-- Formulario -->
+        <form class="space-y-5 text-left">
+            <!-- Campo Correo -->
+            <div>
+                <label class=" text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                    Correo electronico o usuario
+                </label>
+                <input type="text"placeholder="correo electrónico o usuario"
+                    class="w-full bg-morado-700 border border-slate-200 rounded-xl px-4 py-3
+                    text-black placeholder-slate-500 text-sm focus:outline-none focus:border-morado-100 focus:ring-1
+                    focus:ring-morado-400 transition-all duration-200">
+            </div>
+            <!-- Campo Contraseña -->
+            <div>
+                <div class="flex justify-between items-center mb-2">
+                    <label class="text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                        Contraseña
+                    </label>
+                    <a href="#" class="text-xs text-morado-200 hover:text-morado-300 transition-colors">¿Olvidaste clave?</a>
+                </div>
+                <input type="password" placeholder="••••••••••••"
+                    class="w-full bg-slate border border-slate-200 rounded-xl px-4 py-3 text-black placeholder-slate-500 text-sm focus:outline-none 
+                    focus:border-morado-100 focus:ring-1 focus:ring-morado-400 transition-all duration-200">
+            </div>
+    
+            <!-- Botón de Envío Neón -->
+            <div class="flex flex-col sm:flex-row gap-4 mt-9">
+                <a href="#contacto" class=" w-full bg-morado text-white px-5 py-3 rounded-lg font-medium text-sm shadow-boton 
+                    text-center hover:bg-indigo-900 transition">
+                    Iniciar sesión
+                </a>
+            </div>
+        </form>
+        <div class="flex items-center w-full my-8 gap-4">
+            <div class="flex-1 h-px bg-gray-400">
+            </div>
+            <span class="text-sm text-black">
+                ¿No tienes una cuenta?
+            </span>
+            <div class="flex-1 h-px bg-gray-400"></div>
+        </div>
+        <div class="text-center">
+            <a href="registro.html"
+            class="text-morado font-semibold hover:text-purple-700 transition">
+                Registrarme
+            </a>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

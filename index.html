@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inasistencias | Gestión de asistencia</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fondo: "#F1F0FF",
+                        morado: "#8580FF",
+                        moradoClaro: "#DDE3FF",
+                        azulOscuro: "#242052",
+                        texto: "#536075",
+                    },
+                    boxShadow: {
+                        tarjeta: "0 12px 30px rgba(36, 32, 82, 0.08)",
+                        boton: "0 5px 12px rgba(133, 128, 255, 0.35)"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-fondo text-azulOscuro">
+    <!-- NAVBAR -->
+    <header class="w-full">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-10 py-7">
+            <div class="flex items-center justify-between">
+                <!-- LOGO -->
+                <a href="#inicio" class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl justify-center">
+                        <div class="w-12 h-12 rounded-xl bg-morado flex items-center justify-center shadow-boton">
+                            📆
+                        </div>
+                    </div>
+                    <span class="text-xl font-bold">
+                        Inasistencias
+                    </span>
+                </a>
+                <!-- MENU DESKTOP -->
+                <div class="hidden md:flex items-center gap-9 text-gray-700">
+                    <a href="#inicio" class="hover:text-morado transition">
+                        Inicio
+                    </a>
+                    <a href="#funcionalidades" class="hover:text-morado transition">
+                        Funcionalidades
+                    </a>
+                    <a href="#soporte" class="hover:text-morado transition">
+                        Soporte
+                    </a>
+                    <a href="registrarse/registro.html"
+                        class="bg-morado text-white px-5 py-3 rounded-lg text-sm font-medium shadow-boton hover:bg-indigo-500 transition">
+                        Registrarse
+                    </a>
+                    <a href="login/login.html"
+                        class="bg-morado text-white px-5 py-3 rounded-lg text-sm font-medium shadow-boton hover:bg-indigo-500 transition">
+                        Iniciar Sesión
+                    </a>
+                </div>
+                <!-- BOTÓN MOBILE -->
+                <button id="menuBtn" class="md:hidden text-azulOscuro">
+                </button>
+            </div>
+            <!-- MENU MOBILE -->
+            <div id="mobileMenu" class="hidden md:hidden mt-6 bg-white rounded-2xl p-5 shadow-tarjeta">
+                <div class="flex flex-col gap-5">
+                    <a href="#inicio" class="hover:text-morado">
+                        Inicio
+                    </a>
+                    <a href="#funcionalidades" class="hover:text-morado">
+                        Funcionalidades
+                    </a>
+                    <a href="#soporte" class="hover:text-morado">
+                        Soporte
+                    </a>
+                    <a href="#Registrarse" class="bg-morado text-white text-center py-3 rounded-lg">
+                        Registrarse
+                    </a>
+                    <a href="#Iniciar sesión" class="bg-morado text-white text-center py-3 rounded-lg">
+                        Iniciar Sesión
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- HERO -->
+    <main id="inicio">
+        <section class="max-w-7xl mx-auto px-6 lg:px-10 pt-8 pb-20">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- TEXTO -->
+                <div>
+                    <!-- TITULO -->
+                    <h1 class="text-5xl sm:text-6xl lg:text-[58px] leading-[1.02] font-extrabold 
+                    tracking-tight text-azulOscuro">
+                        Gestiona tus inasistencias de forma fácil y segura <br>
+                    </h1>
+                    <!-- DESCRIPCIÓN -->
+                    <p class="mt-7 text-lg leading-7 text-texto max-w-xl">
+                        Una plataforma integral para instituciones educativas.
+                        Registra, monitorea y analiza las asistencias de tus
+                        estudiantes de manera automática.
+                    </p>
+                    <!-- BOTONES -->
+                    <div class="flex flex-col sm:flex-row gap-4 mt-9">
+                        <a href="#contacto" class="bg-morado text-white px-5 py-3 rounded-lg font-medium text-sm shadow-boton 
+                            text-center hover:bg-indigo-500 transition">
+                            Comenzar Ahora
+                        </a>
+                    </div>
+                    <!-- INFORMACIÓN -->
+                    <div class="flex flex-col sm:flex-row gap-6 mt-8 text-texto">
+                        <div class="flex items-center gap-2">
+                        </div>
+                        <div class="flex items-center gap-2">
+                        </div>
+                    </div>
+                </div>
+                <!-- IMAGEN / PANEL -->
+                <div class="relative">
+                    <div class="relative rounded-[28px] overflow-hidden shadow-2xl min-h-[400px] sm:min-h-[500px] 
+                    flex items-center justify-center bg-gradient-to-br from-purple-200 via-white to-purple-300">
+                        <!-- Fondo representativo -->
+                        <div class="absolute inset-0">
+                            <img src="i.png" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-purple-900/30"></div>
+                        </div>
+                        <!-- ASISTENCIA -->
+                        <div class="bg-white rounded-2xl p-4 shadow-lg">
+                            <div class="w-8 h-8 rounded-full bg-moradoClaro flex items-center 
+                                    justify-center mb-3">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- TARJETA CALENDARIO -->
+                    <div
+                        class="absolute bottom-8 right-5 sm:right-10 z-20 bg-white/80 backdrop-blur-md p-5 rounded-xl shadow-xl rotate-[-5deg]">
+                        <div class="text-4xl font-bold text-morado">
+                            15
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            Asistencias
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- FUNCIONALIDADES -->
+        <section id="funcionalidades" class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-azulOscuro">
+                    ¿Por qué elegirnos?
+                </h2>
+                <p class="mt-4 text-lg text-texto">
+                    Soluciones pensadas para tu institución.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- TARJETA 1 -->
+                <article class="bg-white rounded-3xl p-8 shadow-tarjeta hover:-translate-y-1 transition">
+                    <h3 class="text-xl font-bold mb-3">
+                        Registro
+                    </h3>
+                    <p class="text-texto leading-6">
+                        Registra la inasistencia de los estudiantes por curso,
+                        fecha y jornada, manteniendo la información organizada.
+                    </p>
+                </article>
+                <!-- TARJETA 2 -->
+                <article class="bg-white rounded-3xl p-8 shadow-tarjeta hover:-translate-y-1 transition">
+                    <h3 class="text-xl font-bold mb-3">
+                        Análisis
+                    </h3>
+                    <p class="text-texto leading-6">
+                        Genera reportes detallados por curso,
+                        docente o institución. Identifica patrones de
+                        inasistencia.
+                    </p>
+                </article>
+                <!-- TARJETA 3 -->
+                <article class="bg-white rounded-3xl p-8 shadow-tarjeta hover:-translate-y-1 transition">
+                    <h3 class="text-xl font-bold mb-3">
+                        Notificaciones
+                    </h3>
+                    <p class="text-texto leading-6">
+                        Envía alertas automáticas a padres o
+                        tutores cuando se registre una inasistencia.
+                        Mantén a todos informados.
+                    </p>
+                </article>
+            </div>
+        </section>
+        <!-- SOPORTE -->
+        <section id="soporte" class="max-w-7xl mx-auto px-6 lg:px-10 py-10">
+
+            <div class="bg-white rounded-[30px] shadow-tarjeta p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <span class="text-morado font-semibold">
+                            SOPORTE
+                        </span>
+                        <h2 class="text-4xl font-extrabold mt-3">
+                            Estamos aquí para ayudarte
+                        </h2>
+                        <p class="text-texto text-lg mt-5 leading-7">
+                            Nuestro equipo está disponible para resolver
+                            tus dudas y ayudarte a aprovechar todas las
+                            funcionalidades de Inasistencias.
+                        </p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div class="bg-fondo rounded-2xl p-4">
+                            <div class="text-3xl mb-3">  
+                            </div>
+                            <h3 class="font-bold">
+                                Chat de soporte
+                            </h3>
+                            <p class="text-texto text-sm mt-2">
+                                Resuelve tus dudas rápidamente.
+                            </p>
+                        </div>
+                        <div class="bg-fondo rounded-2xl p-6">
+                            <div class="text-3xl mb-3">
+                            </div>
+                            <h3 class="font-bold">
+                                Centro de ayuda
+                            </h3>
+                            <p class="text-texto text-sm mt-2">
+                                Encuentra respuestas y tutoriales.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CONTACTO -->
+        <section id="contacto" class="py-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-10">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- INFORMACIÓN -->
+                    <div>
+                        <span class="text-morado font-semibold">
+                            CONTÁCTANOS
+                        </span>
+                        <h2 class="text-4xl md:text-5xl font-extrabold mt-3">
+                            ¿Tienes alguna pregunta?
+                        </h2>
+                        <p class="text-texto text-lg mt-5 leading-7">
+                            Escríbenos y nuestro equipo se pondrá en
+                            contacto contigo para brindarte toda la
+                            información que necesites.
+                        </p>
+                        <div class="mt-8 space-y-5">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-moradoClaro flex items-center justify-center">
+                                    📩
+                                </div>
+                                <div>
+                                    <p class="font-bold">
+                                        Correo
+                                    </p>
+                                    <p class="text-texto">
+                                        contacto@inasistencias.com
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-moradoClaro flex items-center justify-center">
+                                    📞
+                                </div>
+                                <div>
+                                    <p class="font-bold">
+                                        Teléfono
+                                    </p>
+                                    <p class="text-texto">
+                                        +57 320 873 5674
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-moradoClaro flex items-center justify-center">
+                                    📍
+                                </div>
+                                <div>
+                                    <p class="font-bold">
+                                        Ubicación
+                                    </p>
+                                    <p class="text-texto">
+                                        Colombia
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div
+                            class="relative rounded-[28px] overflow-hidden shadow-2xl min-h-[400px] sm:min-h-[500px] 
+                            flex items-center justify-center bg-gradient-to-br from-purple-200 via-white to-purple-300">
+
+                            <!-- Fondo representativo -->
+                            <div class="absolute inset-0">
+                                <img src="ina.png" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-purple-900/30"></div>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="bg-azulOscuro text-white mt-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12">
+            <div class="grid md:grid-cols-4 gap-10">
+                <!-- PRODUCTO -->
+                <span class="font-bold text-xl text-right">
+                    <h1>Desarrollado por:</h1>
+                </span>
+                <p class="text-gray-200 mt-4 leading-6 -translate-y-3">
+                    M-DelMar & A-Aragón
+                    Sena- Analisis y Desarrollo de Software
+                </p>
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>
+
+</html>
