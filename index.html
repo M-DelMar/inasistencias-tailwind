@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inasistencias | Gestión de asistencia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configuración de Tailwind -->
@@ -13,7 +14,7 @@
                 extend: {
                     colors: {
                         fondo: "#F1F0FF",
-                        morado: "#8580FF",
+                        morado: "#D0B5F7",
                         moradoClaro: "#DDE3FF",
                         azulOscuro: "#242052",
                         texto: "#536075",
@@ -56,34 +57,43 @@
                         Soporte
                     </a>
                     <a href="registrarse/registro.html"
-                        class="bg-morado text-white px-5 py-3 rounded-lg text-sm font-medium shadow-boton hover:bg-indigo-500 transition">
+                        class="bg-morado text-white px-5 py-3 rounded-lg text-sm font-medium shadow-boton hover:bg-azulOscuro transition">
                         Registrarse
                     </a>
                     <a href="login/login.html"
-                        class="bg-morado text-white px-5 py-3 rounded-lg text-sm font-medium shadow-boton hover:bg-indigo-500 transition">
+                        class="bg-morado text-white px-5 py-3 rounded-lg text-sm font-medium shadow-boton hover:bg-azulOscuro transition">
                         Iniciar Sesión
                     </a>
                 </div>
                 <!-- BOTÓN MOBILE -->
-                <button id="menuBtn" class="md:hidden text-azulOscuro">
+
+                <button id="menuBtn" class="md:hidden text-azulOscuro text-3xl">
+                    <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
+            
             <!-- MENU MOBILE -->
-            <div id="mobileMenu" class="hidden md:hidden mt-6 bg-white rounded-2xl p-5 shadow-tarjeta">
+            <div id="mobileMenu" class="hidden md:hidden absolute right-5 top-20 w-64 bg-white 
+                rounded-2xl p-5 shadow-tarjeta z-50">
+
                 <div class="flex flex-col gap-5">
                     <a href="#inicio" class="hover:text-morado">
                         Inicio
                     </a>
+
                     <a href="#funcionalidades" class="hover:text-morado">
                         Funcionalidades
                     </a>
+
                     <a href="#soporte" class="hover:text-morado">
                         Soporte
                     </a>
-                    <a href="#Registrarse" class="bg-morado text-white text-center py-3 rounded-lg">
+
+                    <a href="registrarse/registro.html" class="bg-morado text-white text-center py-3 rounded-lg">
                         Registrarse
                     </a>
-                    <a href="#Iniciar sesión" class="bg-morado text-white text-center py-3 rounded-lg">
+
+                    <a href="login/login.html" class="bg-morado text-white text-center py-3 rounded-lg">
                         Iniciar Sesión
                     </a>
                 </div>
@@ -97,7 +107,7 @@
                 <!-- TEXTO -->
                 <div>
                     <!-- TITULO -->
-                    <h1 class="text-5xl sm:text-6xl lg:text-[58px] leading-[1.02] font-extrabold 
+                    <h1 class="text-4xl sm:text-6xl lg:text-[58px] leading-[1.02] font-extrabold 
                     tracking-tight text-azulOscuro">
                         Gestiona tus inasistencias de forma fácil y segura <br>
                     </h1>
@@ -203,7 +213,7 @@
             <div class="bg-white rounded-[30px] shadow-tarjeta p-8 md:p-12">
                 <div class="grid md:grid-cols-2 gap-10 items-center">
                     <div>
-                        <span class="text-morado font-semibold">
+                        <span class="text-azulOscuro font-semibold">
                             SOPORTE
                         </span>
                         <h2 class="text-4xl font-extrabold mt-3">
@@ -246,7 +256,7 @@
                 <div class="grid lg:grid-cols-2 gap-12">
                     <!-- INFORMACIÓN -->
                     <div>
-                        <span class="text-morado font-semibold">
+                        <span class="text-azulOscuro font-semibold">
                             CONTÁCTANOS
                         </span>
                         <h2 class="text-4xl md:text-5xl font-extrabold mt-3">
@@ -318,10 +328,10 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12">
             <div class="grid md:grid-cols-4 gap-10">
                 <!-- PRODUCTO -->
-                <span class="font-bold text-xl text-right">
+                <span class="font-bold text-xl">
                     <h1>Desarrollado por:</h1>
                 </span>
-                <p class="text-gray-200 mt-4 leading-6 -translate-y-3">
+                <p class="text-gray-200">
                     M-DelMar & A-Aragón
                     Sena- Analisis y Desarrollo de Software
                 </p>
@@ -329,6 +339,14 @@
         </div>
         </div>
     </footer>
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+    
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
 </body>
 
 </html>
